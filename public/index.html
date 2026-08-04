@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <title>Palm Registration Test</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">H5 REGISTRATION POC</div>
+    <h1>Register your palm</h1>
+    <p class="lead">Enter visitor details, then continue to the secure palm camera flow.</p>
+
+    <form id="registrationForm" novalidate>
+      <label>IC / ID card number
+        <input id="userId" inputmode="numeric" autocomplete="off" maxlength="14" placeholder="XXXXXX-XX-XXXX" required />
+        <small>Dashes are added automatically and removed before submission.</small>
+      </label>
+      <label>Full name
+        <input id="userName" autocomplete="name" maxlength="64" required />
+      </label>
+      <label>Phone number
+        <input id="phoneNo" inputmode="numeric" autocomplete="tel" placeholder="0123456789" required />
+        <small>For testing, enter a normal Malaysian number or digits only.</small>
+      </label>
+      <button id="startBtn" type="submit">Start palm registration</button>
+    </form>
+
+    <section id="status" class="status" aria-live="polite">Checking SDK…</section>
+    <details>
+      <summary>Technical result</summary>
+      <pre id="result">No session started.</pre>
+    </details>
+  </main>
+
+  <script src="__PALM_SDK_LOADER_URL__"></script>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
