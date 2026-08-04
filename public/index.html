@@ -15,15 +15,19 @@
 
     <form id="registrationForm" novalidate>
       <label>IC / ID card number
-        <input id="userId" inputmode="numeric" autocomplete="off" maxlength="14" placeholder="XXXXXX-XX-XXXX" required />
+        <input id="icNumber" name="icNumber" inputmode="numeric" autocomplete="off" maxlength="14" placeholder="XXXXXX-XX-XXXX" required />
         <small>Dashes are added automatically and removed before submission.</small>
       </label>
       <label>Full name
-        <input id="userName" autocomplete="name" maxlength="64" required />
+        <input id="userName" name="userName" autocomplete="name" maxlength="64" required />
       </label>
       <label>Phone number
-        <input id="phoneNo" inputmode="numeric" autocomplete="tel" placeholder="0123456789" required />
+        <input id="phoneNo" name="phoneNo" inputmode="numeric" autocomplete="tel" placeholder="0123456789" required />
         <small>For testing, enter a normal Malaysian number or digits only.</small>
+      </label>
+      <label>Six-digit session code
+        <input id="sessionCode" name="sessionCode" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" autocomplete="one-time-code" placeholder="123456" required />
+        <small>Enter the code supplied for this visitor session.</small>
       </label>
       <button id="startBtn" type="submit">Start palm registration</button>
     </form>
